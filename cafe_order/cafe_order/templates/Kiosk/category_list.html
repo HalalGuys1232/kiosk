@@ -1,0 +1,9 @@
+<h1>카테고리를 정해주세요!</h1>
+
+<br>
+
+<ul>
+    {% for category in category_list %}
+        <li><a href="{% url 'kiosk:category_detail' category.id %}">{{ category.category_name }}</a></li>
+    {% endfor %}
+</ul>

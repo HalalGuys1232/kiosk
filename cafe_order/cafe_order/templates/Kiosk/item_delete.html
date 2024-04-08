@@ -1,0 +1,12 @@
+<h1>{{ category }} 상품 삭제 확인 </h1>
+<body>
+    <h1>상품 삭제</h1>
+    <p>정말로 이 상품을 삭제하시겠습니까?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="삭제 확인">
+        <a href="{% url 'kiosk:category_detail' pk=object.category.pk %}">취소</a>
+    </form>
+</body>
+</html>

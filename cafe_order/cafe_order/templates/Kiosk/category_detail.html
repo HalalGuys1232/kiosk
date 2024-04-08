@@ -1,0 +1,15 @@
+
+<h3>메뉴를 선택해주세요!</h3>
+
+<ul>
+    {% for item in item_list %}
+        <h2><li>{{ item.name }} : {{ item.price }}원</li></h2>
+        <form action="{% url 'kiosk:order_item' item.pk %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="주문하기">
+        </form>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'kiosk:item_create' %}" class="btn btn-primary">상품 추가하기</a>
+<a href="{% url 'kiosk:item_delete' %}" class="btn btn-primary">상품 삭제하기</a>

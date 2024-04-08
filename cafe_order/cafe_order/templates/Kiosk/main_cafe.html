@@ -1,0 +1,13 @@
+{{main}}
+<h1>잘 오나??</h1>
+<ul>
+{% for drink in main %}
+    <h3>카테고리 : {{drink.name}}</h3>
+    {% for item  in drink.items_set.all %}
+     상품명 : {{items.name}}   가격 : {{items.price}}
+     <br>
+    {% endfor %}
+{% endfor %}
+
+<a href="{% url 'kiosk:item_create' %}" class="btn btn-primary">상품 추가하기</a>
+<a href="{% url 'kiosk:item_delete' %}" class="btn btn-primary">상품 삭제하기</a>

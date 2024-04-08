@@ -1,0 +1,12 @@
+
+<h1>{{ category }} 상품 추가</h1>
+
+<form action="{% url 'kiosk:item_create' %}" method="post">
+    {% csrf_token %}
+    <label for="item_name">상품명:</label><br>
+    <input type="text" id="item_name" name="item_name"><br>
+    <label for="item_price">가격:</label><br>
+    <input type="number" id="item_price" name="item_price"><br>
+    <input type="submit" value="추가하기">
+</form>
+</body>
